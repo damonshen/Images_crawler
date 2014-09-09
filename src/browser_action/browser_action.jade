@@ -1,0 +1,13 @@
+doctype html5
+html(ng-app='ImageCrawlerApp' ng-csp)
+  head
+  body(ng-controller='PageController')
+    #main
+      #title Images Crawler
+      button.btn(ng-click='selectImages()') select
+      div {{tab}}
+
+  link(rel='stylesheet', href='./styles/main.css')
+  script(type='text/javascript' src='../../bower_components/angular/angular.min.js')
+  script(type='text/javascript' src='./js/main.js')
+

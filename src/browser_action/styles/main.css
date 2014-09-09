@@ -1,0 +1,6 @@
+html body {
+  width: 300px;
+}
+html body #main #title {
+  text-align: center;
+}
