@@ -9,6 +9,20 @@
       }
     }, 10);
   });
+  chrome.runtime.onConnect.addListener(function(port){
+    console.log(port.name === 'imc_port');
+    return port.onMessage.addListener(function(msg){
+      console.log(msg);
+      if (msg.hihi != null) {
+        console.log(msg.hihi);
+        return port.postMessage({
+          res: 'response_from_long'
+        });
+      } else if (msg.res != null) {
+        return console.log(msg.res);
+      }
+    });
+  });
   chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
     if (request.hello === 'hi') {
       sendResponse({
